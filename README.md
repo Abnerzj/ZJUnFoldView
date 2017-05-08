@@ -43,7 +43,7 @@ ZJUnFoldView+Untils.h               ZJUnFoldView+Untils.m
 ### <a id="Custom_Content"></a> The custom content and property【通过自定义内容和属性】
 ```objc
 // 1.获取属性字符串：自定义内容和属性
-ZJUnFoldAttributedString *unFoldAttrStr = [[ZJUnFoldAttributedString alloc] initWithContent:@"港珠澳大桥。港珠澳大桥。珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港"
+ZJUnFoldAttributedString *unFoldAttrStr = [[ZJUnFoldAttributedString alloc] initWithContent:@"人生，如一幅春夏秋冬的景象，岁月，像一趟穿越四季的列车，我们都在路上。际遇是沿途的风光，无论我们是无视或是欣赏，终究都成为匆匆的过往。珍惜吧，珍惜会让生命中的美好增加一些重量。豁然吧，豁然是因为明白一切的风霜仅仅是过场。"
 contentFont:[UIFont systemFontOfSize:12.0f]
 contentColor:[ZJUnFoldView colorWithHexString:@"#8b8b8b"]
 unFoldString:@"[显示全文]"
@@ -51,9 +51,6 @@ foldString:@"[收回]"
 unFoldFont:[UIFont systemFontOfSize:12.0f]
 unFoldColor:[ZJUnFoldView colorWithHexString:@"#dd4991"]
 lineSpacing:7.0f];
-
-// 1.获取属性字符串：自定义内容和属性
-ZJUnFoldAttributedString *unFoldAttrStr = [[ZJUnFoldAttributedString alloc] initWithContent:@"港珠澳大桥。港珠澳大桥。珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港" contentFont:[UIFont systemFontOfSize:12.0f] contentColor:[ZJUnFoldView colorWithHexString:@"#8b8b8b"] unFoldString:@"[显示全文]" foldString:@"[收回]" unFoldFont:[UIFont systemFontOfSize:12.0f] unFoldColor:[ZJUnFoldView colorWithHexString:@"#dd4991"] lineSpacing:7.0f];
 
 // 2.添加展开视图
 ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
@@ -65,7 +62,7 @@ unFoldView.backgroundColor = [UIColor orangeColor];
 ### <a id="Default_Configure"></a> The default Configure【通过默认配置】
 ```objc
 // 1.获取属性字符串：默认配置
-ZJUnFoldAttributedString *unFoldAttrStr = [ZJUnFoldAttributedString defaultConficAttributedString:@"港珠澳大桥。港珠澳大桥。港珠gggggggghs澳大港珠澳大桥。港珠澳大桥。港珠澳大桥港珠澳大桥港珠澳ffff大桥港珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥澳大桥港珠澳大桥"];
+ZJUnFoldAttributedString *unFoldAttrStr = [ZJUnFoldAttributedString defaultConficAttributedString:@"人生，如一幅春夏秋冬的景象，岁月，像一趟穿越四季的列车，我们都在路上。际遇是沿途的风光，无论我们是无视或是欣赏，终究都成为匆匆的过往。珍惜吧，珍惜会让生命中的美好增加一些重量。豁然吧，豁然是因为明白一切的风霜仅仅是过场。"];
 
 // 2.添加展开视图
 ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
