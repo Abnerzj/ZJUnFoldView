@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "ZJUnFoldView.h"
-#import "ZJUnFoldView+Untils.h"
+#import "DetailViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    UITableView *_tableView;
+    NSArray *_dataList;
+}
 
 @end
 
@@ -20,25 +23,51 @@
 {
     [super viewDidLoad];
 
-    // 1.获取属性字符串：自定义内容和属性
-//    ZJUnFoldAttributedString *unFoldAttrStr = [[ZJUnFoldAttributedString alloc] initWithContent:@"港珠澳大桥。港珠澳大桥。珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港"
-//                                                                                    contentFont:[UIFont systemFontOfSize:12.0f]
-//                                                                                   contentColor:[ZJUnFoldView colorWithHexString:@"#8b8b8b"]
-//                                                                                   unFoldString:@"[显示全文]"
-//                                                                                     foldString:@"[收回]"
-//                                                                                     unFoldFont:[UIFont systemFontOfSize:12.0f]
-//                                                                                    unFoldColor:[ZJUnFoldView colorWithHexString:@"#dd4991"]
-//                                                                                    lineSpacing:0.0f];
-    // 1.获取属性字符串：默认配置
-    ZJUnFoldAttributedString *unFoldAttrStr = [ZJUnFoldAttributedString defaultConficAttributedString:@"港珠澳大桥。港珠澳大桥。港珠gggggggghs澳大港珠澳大桥。港珠澳大桥。港珠澳大桥港珠澳大桥港珠澳ffff大桥港珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥澳大桥港珠澳大桥"];
+    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    _tableView.separatorInset = UIEdgeInsetsZero;
+    _tableView.rowHeight = 60.0f;
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
     
-    // 2.添加展开视图
-    ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
-    unFoldView.frame = CGRectMake(100, 100, unFoldView.frame.size.width, unFoldView.frame.size.height);
-    unFoldView.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:unFoldView];
+    _dataList = @[@{@"title" : @"添加行间距", @"lineSpacing" : @(7.0f), @"foldLines" : @(3), @"isDefaultUnFold" : @(NO), @"location" : @(2)},
+                  @{@"title" : @"不添加行间距", @"lineSpacing" : @(0.0f), @"foldLines" : @(3), @"isDefaultUnFold" : @(NO), @"location" : @(2)},
+                  @{@"title" : @"默认折叠三行", @"lineSpacing" : @(7.0f), @"foldLines" : @(3), @"isDefaultUnFold" : @(NO), @"location" : @(2)},
+                  @{@"title" : @"默认展开", @"lineSpacing" : @(7.0f), @"foldLines" : @(3), @"isDefaultUnFold" : @(YES), @"location" : @(2)},
+                  @{@"title" : @"展开时展开按钮位置：左边", @"lineSpacing" : @(7.0f), @"foldLines" : @(3), @"isDefaultUnFold" : @(NO), @"location" : @(0)},
+                  @{@"title" : @"默认配置初始化", @"lineSpacing" : @(7.0f), @"foldLines" : @(3), @"isDefaultUnFold" : @(NO), @"location" : @(2)}];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _dataList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *ID = @"ZJUnFoldViewCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    
+    if (indexPath.row >= 0 && indexPath.row < _dataList.count) {
+        NSDictionary *dict = _dataList[indexPath.row];
+        cell.textLabel.text = dict[@"title"];
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row >= 0 && indexPath.row < _dataList.count) {
+        NSDictionary *dict = _dataList[indexPath.row];
+        DetailViewController *vc = [[DetailViewController alloc] init];
+        vc.dict = dict;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

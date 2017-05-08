@@ -22,7 +22,7 @@
  * 2.文字处于展开状态时，默认情况展开按钮紧跟文字最后一个字符的右侧位置，如果该行显示不下，则展开按钮放到文字最后一行下一行的位置
  */
 typedef enum : NSUInteger {
-    UnFoldButtonLocationLeft,         /**< 左边 */
+    UnFoldButtonLocationLeft = 0,     /**< 左边 */
     UnFoldButtonLocationMiddle,       /**< 中间 */
     UnFoldButtonLocationRight,        /**< 右边 */
 } UnFoldButtonLocation;
