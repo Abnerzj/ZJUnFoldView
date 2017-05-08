@@ -1,2 +1,80 @@
 # ZJUnFoldView
-A fast, convenient view to unfold or fold content details, even you only need to pass in a text content.
+- A fast, convenient view to unfold or fold content details, even you only need to pass in a text content.
+- 一个快速便捷展开或折叠内容详情的控件，甚至你只需要传入一段文字内容。
+
+
+## Contents
+* [Getting Started 【开始使用】](#Getting_Started)
+* [Features 【能做什么】](#Features)
+* [Installation 【安装】](#Installation)
+* [Examples 【示例】](#Examples)
+* [The custom content and property](#Custom_Content)
+* [The default Configure](#Default_Configure)
+
+---
+
+# <a id="Getting_Started"></a> Getting Started【开始使用】
+
+## <a id="Features"></a> Features【能做什么】
+ZJUnFoldView是一个快速便捷展开或折叠内容详情的控件。
+- 内容详情支持自定义属性文字，甚至只需传入一段文字内容。
+- 支持默认折叠的行数和展开按钮位置等功能。
+
+## <a id="Installation"></a> Installation【安装】
+
+### From CocoaPods【使用CocoaPods】
+
+```ruby
+pod 'ZJUnFoldView'
+```
+
+### Manually【手动导入】
+- Drag all source files under floder `ZJUnFoldView` to your project.【将`ZJUnFoldView`文件夹中的所有源代码拽入项目中】
+- Import the main header file：`#import "ZJUnFoldView.h"`【导入主头文件：`#import "ZJUnFoldView.h"`】
+
+```objc
+ZJUnFoldView.h                      ZJUnFoldView.m
+ZJUnFoldAttributedString.h          ZJUnFoldAttributedString.m
+ZJUnFoldParagraphStyle.h            ZJUnFoldParagraphStyle.m
+ZJUnFoldView+Untils.h               ZJUnFoldView+Untils.m
+```
+# <a id="Examples"></a> Examples【示例】
+
+### <a id="Custom_Content"></a> The custom content and property【通过自定义内容和属性】
+```objc
+// 1.获取属性字符串：自定义内容和属性
+ZJUnFoldAttributedString *unFoldAttrStr = [[ZJUnFoldAttributedString alloc] initWithContent:@"港珠澳大桥。港珠澳大桥。珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港"
+contentFont:[UIFont systemFontOfSize:12.0f]
+contentColor:[ZJUnFoldView colorWithHexString:@"#8b8b8b"]
+unFoldString:@"[显示全文]"
+foldString:@"[收回]"
+unFoldFont:[UIFont systemFontOfSize:12.0f]
+unFoldColor:[ZJUnFoldView colorWithHexString:@"#dd4991"]
+lineSpacing:7.0f];
+
+// 1.获取属性字符串：自定义内容和属性
+ZJUnFoldAttributedString *unFoldAttrStr = [[ZJUnFoldAttributedString alloc] initWithContent:@"港珠澳大桥。港珠澳大桥。珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港" contentFont:[UIFont systemFontOfSize:12.0f] contentColor:[ZJUnFoldView colorWithHexString:@"#8b8b8b"] unFoldString:@"[显示全文]" foldString:@"[收回]" unFoldFont:[UIFont systemFontOfSize:12.0f] unFoldColor:[ZJUnFoldView colorWithHexString:@"#dd4991"] lineSpacing:7.0f];
+
+// 2.添加展开视图
+ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
+unFoldView.frame = CGRectMake(100, 100, unFoldView.frame.size.width, unFoldView.frame.size.height);
+unFoldView.backgroundColor = [UIColor orangeColor];
+[self.view addSubview:unFoldView];
+```
+
+### <a id="Default_Configure"></a> The default Configure【通过默认配置】
+```objc
+// 1.获取属性字符串：默认配置
+ZJUnFoldAttributedString *unFoldAttrStr = [ZJUnFoldAttributedString defaultConficAttributedString:@"港珠澳大桥。港珠澳大桥。港珠gggggggghs澳大港珠澳大桥。港珠澳大桥。港珠澳大桥港珠澳大桥港珠澳ffff大桥港珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥珠澳大桥港珠澳大桥港珠澳大桥港珠澳大桥澳大桥港珠澳大桥"];
+
+// 2.添加展开视图
+ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
+unFoldView.frame = CGRectMake(100, 100, unFoldView.frame.size.width, unFoldView.frame.size.height);
+unFoldView.backgroundColor = [UIColor orangeColor];
+[self.view addSubview:unFoldView];
+```
+
+## 期待
+* 如果在使用过程中遇到BUG，希望你能Issues我，谢谢（或者尝试下载最新的框架代码看看BUG修复没有）
+* 如果在使用过程中发现功能不够用，希望你能Issues我，我非常想为这个框架增加更多好用的功能，谢谢
+* 如果你想为ZJUnFoldView输出代码，请拼命Pull Requests我
