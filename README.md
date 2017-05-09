@@ -93,7 +93,7 @@ ZJUnFoldParagraphStyle *paragraphStyle = [ZJUnFoldParagraphStyle initWithLineSpa
 ZJUnFoldAttributedString *attrStr = [[ZJUnFoldAttributedString alloc] initWithContentAttrStr:contentAttrStr unFoldAttrStr:unFoldAttrStr foldAttrStr:foldAttrStr paragraphStyle:paragraphStyle];
 
 // 3.添加展开视图
-ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
+ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:attrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
 unFoldView.frame = CGRectMake(100, 100, unFoldView.frame.size.width, unFoldView.frame.size.height);
 unFoldView.backgroundColor = [UIColor orangeColor];
 [self.view addSubview:unFoldView];
