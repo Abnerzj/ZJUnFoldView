@@ -2,7 +2,7 @@
 - A fast, convenient view to unfold or fold content details, even you only need to pass in a text content.
 - 一个快速便捷展开或折叠内容详情的控件，甚至你只需要传入一段文字内容。
 
-<div align=center>
+<div align=left>
 <img width="300" height="534" src="http://g.recordit.co/nUahvS453Z.gif"/>
 <img width="300" height="319" src="http://g.recordit.co/Vce1183QdS.gif"/>
 </div>
