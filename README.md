@@ -3,6 +3,7 @@
 - 一个快速便捷展开或折叠内容详情的控件，甚至你只需要传入一段文字内容。
 
 <img width="300" height="534" src="http://g.recordit.co/nUahvS453Z.gif"/>
+<img width="400" height="425" src="http://g.recordit.co/Vce1183QdS.gif"/>
 
 ## Contents
 * [Getting Started 【开始使用】](#Getting_Started)
@@ -11,6 +12,7 @@
 * [Examples 【示例】](#Examples)
 * [The custom content and property](#Custom_Content)
 * [The default Configure](#Default_Configure)
+* [The custom attributed string](#Custom_AttributedString)
 
 ---
 
@@ -66,6 +68,28 @@ unFoldView.backgroundColor = [UIColor orangeColor];
 ZJUnFoldAttributedString *unFoldAttrStr = [ZJUnFoldAttributedString defaultConficAttributedString:@"人生，如一幅春夏秋冬的景象，岁月，像一趟穿越四季的列车，我们都在路上。际遇是沿途的风光，无论我们是无视或是欣赏，终究都成为匆匆的过往。珍惜吧，珍惜会让生命中的美好增加一些重量。豁然吧，豁然是因为明白一切的风霜仅仅是过场。"];
 
 // 2.添加展开视图
+ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
+unFoldView.frame = CGRectMake(100, 100, unFoldView.frame.size.width, unFoldView.frame.size.height);
+unFoldView.backgroundColor = [UIColor orangeColor];
+[self.view addSubview:unFoldView];
+```
+
+### <a id="Custom_AttributedString"></a> The custom attributed string【通过自定义属性字符串】
+```objc
+// 1.自定义属性字符串
+// 1.1 内容属性字符串
+NSAttributedString *contentAttrStr = [[NSAttributedString alloc] initWithString:@"人生，如一幅春夏秋冬的景象，岁月，像一趟穿越四季的列车，我们都在路上。际遇是沿途的风光，无论我们是无视或是欣赏，终究都成为匆匆的过往。珍惜吧，珍惜会让生命中的美好增加一些重量。豁然吧，豁然是因为明白一切的风霜仅仅是过场。" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12.0f], NSForegroundColorAttributeName : [ZJUnFoldView colorWithHexString:@"#8b8b8b"]}];
+// 1.2 展开属性字符串
+NSAttributedString *unFoldAttrStr = [[NSMutableAttributedString alloc] initWithString:@"[显示全文]" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12.0f], NSForegroundColorAttributeName : [ZJUnFoldView colorWithHexString:@"#dd4991"]}];
+// 1.3 折叠属性字符串
+NSAttributedString *foldAttrStr = [[NSMutableAttributedString alloc] initWithString:@"[收回]" attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12.0f], NSForegroundColorAttributeName : [ZJUnFoldView colorWithHexString:@"#dd4991"]}];
+// 1.4 样式
+ZJUnFoldParagraphStyle *paragraphStyle = [ZJUnFoldParagraphStyle initWithLineSpacing:7.0f];
+
+// 2.获取属性字符串：自定义属性字符串
+ZJUnFoldAttributedString *attrStr = [[ZJUnFoldAttributedString alloc] initWithContentAttrStr:contentAttrStr unFoldAttrStr:unFoldAttrStr foldAttrStr:foldAttrStr paragraphStyle:paragraphStyle];
+
+// 3.添加展开视图
 ZJUnFoldView *unFoldView = [[ZJUnFoldView alloc] initWithAttributedString:unFoldAttrStr maxWidth:200.0f isDefaultUnFold:NO foldLines:3 location:UnFoldButtonLocationRight];
 unFoldView.frame = CGRectMake(100, 100, unFoldView.frame.size.width, unFoldView.frame.size.height);
 unFoldView.backgroundColor = [UIColor orangeColor];
