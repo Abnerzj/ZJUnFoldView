@@ -238,7 +238,7 @@
             
             // 4.1.2.8 处理折叠时最后一行
             if (_isFoldLinesMoreOne) {
-                tempContentAttributedString = [ZJUnFoldView getLineNumBeforeAttrStingFromAttrStr:contentAttributedString lineNum:foldLines deleteStringLength:unFoldAttrStr.unFoldAttributedString.length maxWidth:maxWidth];
+                tempContentAttributedString = [ZJUnFoldView getLineNumBeforeAttrStingFromAttrStr:contentAttributedString lineNum:foldLines deleteString:unFoldAttrStr.unFoldAttributedString.string maxWidth:maxWidth];
                 if (unFoldAttrStr.paragraphStyle) {
                     [tempContentAttributedString addAttribute:NSParagraphStyleAttributeName value:unFoldAttrStr.paragraphStyle range:NSMakeRange(0, [tempContentAttributedString length])];
                 }

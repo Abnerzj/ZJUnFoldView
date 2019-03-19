@@ -52,14 +52,14 @@
  获取属性字符串某一行之前的所有字符串
  @param attributedString 属性字符串
  @param lineNum 行数（0~count-1）
- @param deleteStringLength 要删除的字符长度
+ @param deleteString 要删除的字符
  @param maxWidth 最大宽度
  @return 属性字符串
  */
 + (NSMutableAttributedString *)getLineNumBeforeAttrStingFromAttrStr:(NSAttributedString *)attributedString
-                                                     lineNum:(NSUInteger)lineNum
-                                          deleteStringLength:(NSUInteger)deleteStringLength
-                                                    maxWidth:(CGFloat)maxWidth;
+                                                            lineNum:(NSUInteger)lineNum
+                                                       deleteString:(NSString *)deleteString
+                                                           maxWidth:(CGFloat)maxWidth;
 /**
  获取属性字符串行数
 

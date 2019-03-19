@@ -87,9 +87,9 @@
  * 获取属性字符串某一行之前的所有字符串
  */
 + (NSMutableAttributedString *)getLineNumBeforeAttrStingFromAttrStr:(NSAttributedString *)attributedString
-                                                     lineNum:(NSUInteger)lineNum
-                                          deleteStringLength:(NSUInteger)deleteStringLength
-                                                    maxWidth:(CGFloat)maxWidth
+                                                            lineNum:(NSUInteger)lineNum
+                                                       deleteString:(NSString *)deleteString
+                                                           maxWidth:(CGFloat)maxWidth
 {
     __block NSMutableAttributedString *lineNumBeforeAttrSting = [[NSMutableAttributedString alloc] init];
     
@@ -113,7 +113,7 @@
                 
                 lineAttrStr = [attributedString attributedSubstringFromRange:range];
                 if (idx == lineNum - 1) {
-                    handlingLineAttrStr = [lineAttrStr attributedSubstringFromRange:NSMakeRange(0, lineAttrStr.length - deleteStringLength)];
+                    handlingLineAttrStr = [lineAttrStr attributedSubstringFromRange:NSMakeRange(0, lineAttrStr.length - [self getDeleteStringLength:deleteString parentArrrStr:lineAttrStr])];
                     [lineNumBeforeAttrSting appendAttributedString:handlingLineAttrStr];
                     
                     NSRange appendRange = NSMakeRange(0, lineAttrStr.length);
@@ -132,6 +132,46 @@
     CGPathRelease(path);
     
     return lineNumBeforeAttrSting;
+}
+
+/**
+ * 获取要删除的子字符串的长度
+ */
++ (NSUInteger)getDeleteStringLength:(NSString *)deleteString parentArrrStr:(NSAttributedString *)parentArrrStr
+{
+    NSUInteger deleteStringLength = deleteString.length;
+    
+    NSUInteger deleteASCIICharLength = [self getStringASCIICharLength:deleteString];
+    
+    NSUInteger deleteSubAttrStringLength = 1;
+    NSUInteger deleteSubAttrStrASCIICharLength = 0;
+    
+//    do {
+//
+//    } while (deleteSubAttrStrASCIICharLength < deleteASCIICharLength);
+    while (deleteASCIICharLength > deleteSubAttrStrASCIICharLength) {
+        NSAttributedString *subAttrStr = [parentArrrStr attributedSubstringFromRange:NSMakeRange(parentArrrStr.length - deleteSubAttrStringLength, deleteSubAttrStringLength)];
+        deleteSubAttrStrASCIICharLength = [self getStringASCIICharLength:subAttrStr.string];
+        
+        if (deleteASCIICharLength > deleteSubAttrStrASCIICharLength) {
+            deleteSubAttrStringLength++;
+        }
+    }
+    
+    return deleteSubAttrStringLength;
+}
+
+/**
+ * 获取子字符串的字符长度
+ */
++ (NSUInteger)getStringASCIICharLength:(NSString *)string
+{
+    NSUInteger stringLength = 0;
+    for (NSUInteger i = 0; i < string.length; i++) {
+        unichar uc = [string characterAtIndex:i];
+        stringLength += isascii(uc) ? 1 : 2;
+    }
+    return stringLength;
 }
 
 /**
