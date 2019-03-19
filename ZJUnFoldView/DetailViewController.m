@@ -10,6 +10,8 @@
 #import "ZJUnFoldView.h"
 #import "ZJUnFoldView+Untils.h"
 
+static NSString *const testContent = @"人生，如一幅春夏秋冬的景象，岁月，像一趟穿越四季的列车，我们都在路上。际遇是沿途的风光，无论我们是无视或是欣赏，终究都成为匆匆的过往。珍惜吧，珍惜会让生命中的美好增加一些重量。豁然吧，豁然是因为明白一切的风霜仅仅是过场。";
+
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *lineSpacingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *foldLinesLabel;
@@ -36,7 +38,7 @@
     
     
     ZJUnFoldAttributedString *unFoldAttrStr = nil;
-    NSMutableString *content = [[NSMutableString alloc] initWithString:@"人生，如一幅春夏秋冬的景象，岁月，像一趟穿越四季的列车，我们都在路上。际遇是沿途的风光，无论我们是无视或是欣赏，终究都成为匆匆的过往。珍惜吧，珍惜会让生命中的美好增加一些重量。豁然吧，豁然是因为明白一切的风霜仅仅是过场。"];
+    NSMutableString *content = [[NSMutableString alloc] initWithString:testContent];
     if ([self.title isEqualToString:@"默认配置初始化"]) {
         // 1.获取属性字符串：默认配置
         unFoldAttrStr = [ZJUnFoldAttributedString defaultConficAttributedString:content];
