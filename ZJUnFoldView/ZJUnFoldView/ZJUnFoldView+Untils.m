@@ -64,6 +64,12 @@
                 NSRange range = NSMakeRange(lineRange.location, lineRange.length);
                 
                 lineAttrStr = [attributedString attributedSubstringFromRange:range];
+                NSRange lineFeedRange = [lineAttrStr.string rangeOfString:@"\n"];
+                NSRange lineRRange = [lineAttrStr.string rangeOfString:@"\r"];
+                if ((lineFeedRange.location != NSNotFound && lineFeedRange.length) ||
+                    (lineRRange.location != NSNotFound && lineRRange.length)) {
+                    lineAttrStr = [attributedString attributedSubstringFromRange:NSMakeRange(range.location, range.length - 1)];
+                }
                 CGRect lineAttrRect = [lineAttrStr boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
                 
                 if (idx == index) {
