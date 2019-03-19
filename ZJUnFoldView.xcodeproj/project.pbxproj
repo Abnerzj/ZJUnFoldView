@@ -15,10 +15,10 @@
 		9A13E2CF1EB99B5600488479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A13E2CD1EB99B5600488479 /* Main.storyboard */; };
 		9A13E2D11EB99B5600488479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A13E2D01EB99B5600488479 /* Assets.xcassets */; };
 		9A13E2D41EB99B5600488479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A13E2D21EB99B5600488479 /* LaunchScreen.storyboard */; };
-		9A13E2DF1EB99B9000488479 /* ZJUnFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A13E2DE1EB99B9000488479 /* ZJUnFoldView.m */; };
-		9A13E2E21EB99C3200488479 /* ZJUnFoldView+Untils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A13E2E11EB99C3200488479 /* ZJUnFoldView+Untils.m */; };
-		9A13E2E51EB99CA000488479 /* ZJUnFoldParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A13E2E41EB99CA000488479 /* ZJUnFoldParagraphStyle.m */; };
-		9A13E2E81EB99CD700488479 /* ZJUnFoldAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A13E2E71EB99CD700488479 /* ZJUnFoldAttributedString.m */; };
+		9ABC75A022410B5300730C94 /* ZJUnFoldAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC759922410B5300730C94 /* ZJUnFoldAttributedString.m */; };
+		9ABC75A122410B5300730C94 /* ZJUnFoldParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC759B22410B5300730C94 /* ZJUnFoldParagraphStyle.m */; };
+		9ABC75A222410B5300730C94 /* ZJUnFoldView+Untils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC759D22410B5300730C94 /* ZJUnFoldView+Untils.m */; };
+		9ABC75A322410B5300730C94 /* ZJUnFoldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC759F22410B5300730C94 /* ZJUnFoldView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,14 +35,14 @@
 		9A13E2D01EB99B5600488479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A13E2D31EB99B5600488479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A13E2D51EB99B5600488479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A13E2DD1EB99B9000488479 /* ZJUnFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJUnFoldView.h; sourceTree = "<group>"; };
-		9A13E2DE1EB99B9000488479 /* ZJUnFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJUnFoldView.m; sourceTree = "<group>"; };
-		9A13E2E01EB99C3200488479 /* ZJUnFoldView+Untils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZJUnFoldView+Untils.h"; sourceTree = "<group>"; };
-		9A13E2E11EB99C3200488479 /* ZJUnFoldView+Untils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZJUnFoldView+Untils.m"; sourceTree = "<group>"; };
-		9A13E2E31EB99CA000488479 /* ZJUnFoldParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJUnFoldParagraphStyle.h; sourceTree = "<group>"; };
-		9A13E2E41EB99CA000488479 /* ZJUnFoldParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJUnFoldParagraphStyle.m; sourceTree = "<group>"; };
-		9A13E2E61EB99CD700488479 /* ZJUnFoldAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJUnFoldAttributedString.h; sourceTree = "<group>"; };
-		9A13E2E71EB99CD700488479 /* ZJUnFoldAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJUnFoldAttributedString.m; sourceTree = "<group>"; };
+		9ABC759822410B5300730C94 /* ZJUnFoldAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJUnFoldAttributedString.h; sourceTree = "<group>"; };
+		9ABC759922410B5300730C94 /* ZJUnFoldAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJUnFoldAttributedString.m; sourceTree = "<group>"; };
+		9ABC759A22410B5300730C94 /* ZJUnFoldParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJUnFoldParagraphStyle.h; sourceTree = "<group>"; };
+		9ABC759B22410B5300730C94 /* ZJUnFoldParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJUnFoldParagraphStyle.m; sourceTree = "<group>"; };
+		9ABC759C22410B5300730C94 /* ZJUnFoldView+Untils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZJUnFoldView+Untils.h"; sourceTree = "<group>"; };
+		9ABC759D22410B5300730C94 /* ZJUnFoldView+Untils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZJUnFoldView+Untils.m"; sourceTree = "<group>"; };
+		9ABC759E22410B5300730C94 /* ZJUnFoldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJUnFoldView.h; sourceTree = "<group>"; };
+		9ABC759F22410B5300730C94 /* ZJUnFoldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJUnFoldView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 		9A13E2B81EB99B5600488479 = {
 			isa = PBXGroup;
 			children = (
-				9A13E2C31EB99B5600488479 /* ZJUnFoldView */,
+				9A13E2C31EB99B5600488479 /* ZJUnFoldViewDemo */,
 				9A13E2C21EB99B5600488479 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,10 +72,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A13E2C31EB99B5600488479 /* ZJUnFoldView */ = {
+		9A13E2C31EB99B5600488479 /* ZJUnFoldViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9A13E2DC1EB99B7800488479 /* ZJUnFoldView */,
+				9ABC759722410B5300730C94 /* ZJUnFoldView */,
 				9A13E2C71EB99B5600488479 /* AppDelegate.h */,
 				9A13E2C81EB99B5600488479 /* AppDelegate.m */,
 				9A13E2CA1EB99B5600488479 /* ViewController.h */,
@@ -89,7 +89,7 @@
 				9A13E2D51EB99B5600488479 /* Info.plist */,
 				9A13E2C41EB99B5600488479 /* Supporting Files */,
 			);
-			path = ZJUnFoldView;
+			path = ZJUnFoldViewDemo;
 			sourceTree = "<group>";
 		};
 		9A13E2C41EB99B5600488479 /* Supporting Files */ = {
@@ -100,20 +100,20 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9A13E2DC1EB99B7800488479 /* ZJUnFoldView */ = {
+		9ABC759722410B5300730C94 /* ZJUnFoldView */ = {
 			isa = PBXGroup;
 			children = (
-				9A13E2DD1EB99B9000488479 /* ZJUnFoldView.h */,
-				9A13E2DE1EB99B9000488479 /* ZJUnFoldView.m */,
-				9A13E2E61EB99CD700488479 /* ZJUnFoldAttributedString.h */,
-				9A13E2E71EB99CD700488479 /* ZJUnFoldAttributedString.m */,
-				9A13E2E31EB99CA000488479 /* ZJUnFoldParagraphStyle.h */,
-				9A13E2E41EB99CA000488479 /* ZJUnFoldParagraphStyle.m */,
-				9A13E2E01EB99C3200488479 /* ZJUnFoldView+Untils.h */,
-				9A13E2E11EB99C3200488479 /* ZJUnFoldView+Untils.m */,
+				9ABC759822410B5300730C94 /* ZJUnFoldAttributedString.h */,
+				9ABC759922410B5300730C94 /* ZJUnFoldAttributedString.m */,
+				9ABC759A22410B5300730C94 /* ZJUnFoldParagraphStyle.h */,
+				9ABC759B22410B5300730C94 /* ZJUnFoldParagraphStyle.m */,
+				9ABC759C22410B5300730C94 /* ZJUnFoldView+Untils.h */,
+				9ABC759D22410B5300730C94 /* ZJUnFoldView+Untils.m */,
+				9ABC759E22410B5300730C94 /* ZJUnFoldView.h */,
+				9ABC759F22410B5300730C94 /* ZJUnFoldView.m */,
 			);
 			path = ZJUnFoldView;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -188,13 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A13E2DF1EB99B9000488479 /* ZJUnFoldView.m in Sources */,
+				9ABC75A322410B5300730C94 /* ZJUnFoldView.m in Sources */,
+				9ABC75A222410B5300730C94 /* ZJUnFoldView+Untils.m in Sources */,
+				9ABC75A022410B5300730C94 /* ZJUnFoldAttributedString.m in Sources */,
 				9A13E2CC1EB99B5600488479 /* ViewController.m in Sources */,
-				9A13E2E51EB99CA000488479 /* ZJUnFoldParagraphStyle.m in Sources */,
+				9ABC75A122410B5300730C94 /* ZJUnFoldParagraphStyle.m in Sources */,
 				9A08A2DE1EC0724C004EB624 /* DetailViewController.m in Sources */,
 				9A13E2C91EB99B5600488479 /* AppDelegate.m in Sources */,
-				9A13E2E81EB99CD700488479 /* ZJUnFoldAttributedString.m in Sources */,
-				9A13E2E21EB99C3200488479 /* ZJUnFoldView+Untils.m in Sources */,
 				9A13E2C61EB99B5600488479 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AJ9F2AA42Q;
-				INFOPLIST_FILE = ZJUnFoldView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ZJUnFoldViewDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abnerzj.ZJUnFoldView;
@@ -329,7 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AJ9F2AA42Q;
-				INFOPLIST_FILE = ZJUnFoldView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ZJUnFoldViewDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abnerzj.ZJUnFoldView;
