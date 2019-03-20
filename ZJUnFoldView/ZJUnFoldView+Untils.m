@@ -145,8 +145,6 @@
  */
 + (NSUInteger)getDeleteStringLength:(NSString *)deleteString parentArrrStr:(NSAttributedString *)parentArrrStr
 {
-    NSUInteger deleteStringLength = deleteString.length;
-    
     NSUInteger deleteASCIICharLength = [self getStringASCIICharLength:deleteString];
     
     NSUInteger deleteSubAttrStringLength = 1;
